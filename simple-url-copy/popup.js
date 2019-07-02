@@ -42,7 +42,7 @@ const copyUrl = menuType => {
     // Process AmazonURL
     url = extractAmazonUrl(url);
 
-    // Process Query 
+    // Process Query
     if(stores.excludeQuery) {
       url = excludeQuery(url);
     }
@@ -52,8 +52,8 @@ const copyUrl = menuType => {
       case "markdown":
         text = `[${title}](${url})`
         break;
-      case "backlog":
-        text = `[[${title}:${url}]]`
+      case "textile":
+        text = `"${title}":${url} `
         break;
       case "simple":
         text = `${title} ${url}`
